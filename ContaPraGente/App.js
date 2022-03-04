@@ -1,83 +1,24 @@
-import React, {useState} from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
+import React from "react";
+import { View, Text } from "react-native";
 
-export default function App() {
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-  const Entrar =() => {
-    alert (email);
-    alert (senha);
-  }
+import Login from "./Pages/Login/Login";
+import Cadastro from "./Pages/Cadastro/Cadastro";
 
 
+const Stack = createNativeStackNavigator ();
 
+export default function App ( ) {
   return (
-    <View style={styles.container}>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name='Login' component={Login} options= {{ title: 'Login', headerStyle:{ backgroundColor: 'grey' } }} />
 
-     <Image style={styles.Logo} source={require('./assets/LogoContaPraGente.png')}/>
+        <Stack.Screen name='Cadastro' component={Cadastro}/>
 
-      <TextInput placeholder='Digite Seu E-mail...' style={styles.InputLogin} onChangeText= { text=>setEmail(text)} />
-      <TextInput secureTextEntry='true' placeholder='Digite Sua Senha...' style={styles.InputLogin} onChangeText= { text=>setSenha(text)} />
-
-      <TouchableOpacity style={styles.btnEntrar} onPress={()=>Entrar()}>
-
-        <Text style={{color:'white', textAlign:'center'}}>Entrar</Text>
-
-      </TouchableOpacity>
-
-      <TouchableOpacity style= {styles.btnCadastrar}>
-        <Text style= {{color:'white', textAlign:'center'}}>
-          Cadastrar
-        </Text>
-      </TouchableOpacity>
-
-    </View>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#a2d2ff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 10,
-  },
-  
-  Logo:{
-    position: 'relative',
-    height: 300,
-    width: 400,
-    marginTop: -150,
-
-  },
-
-  InputLogin: {
-    backgroundColor: 'white',
-    width: '90%',
-    height: 40,
-    borderRadius: 20,
-    paddingLeft: 10,
-    marginBottom: 15,
-    
-  },
-
-  btnEntrar: {
-    backgroundColor: '#5e60ce',
-    width: '90%',
-    height: 35,
-    borderRadius: 20,
-    justifyContent:'center'
-  },
-
-  btnCadastrar: {
-    backgroundColor: '#5e60ce',
-    width: '90%',
-    height: 35,
-    borderRadius: 20,
-    justifyContent:'center',
-    marginTop: 10,
-  }
-
-});
