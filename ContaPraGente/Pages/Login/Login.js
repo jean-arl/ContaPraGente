@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     height: 300,
     width: 400,
-    marginTop: -150,
+    marginTop: -270,
 
   },
 
