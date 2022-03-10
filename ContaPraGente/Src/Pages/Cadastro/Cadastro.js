@@ -20,7 +20,7 @@ const [confirmeSenha, setConfirmSenha] = useState ('');
     alert (confirmeSenha);
   }
 
-return (
+    return (
         <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} style={{backgroundColor: '#a2d2ff'}} keyboardVerticalOffset={100}>
           <ScrollView style= {{width: '100%'}}>
 

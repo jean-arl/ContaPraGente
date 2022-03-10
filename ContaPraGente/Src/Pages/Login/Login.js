@@ -15,7 +15,7 @@ export default function Login ( { navigation } ) {
   return (
     <View style={styles.container}>
 
-     <Image style={styles.Logo} source={require('./LogoContaPraGente.png')}/>
+     <Image style={styles.Logo} source={require('../Login/LogoContaPraGente.png')}/>
 
       <TextInput placeholder='Digite Seu E-mail...' style={styles.InputLogin} onChangeText= { text=>setEmail(text)} />
       <TextInput secureTextEntry='true' placeholder='Digite Sua Senha...' style={styles.InputLogin} onChangeText= { text=>setSenha(text)} />
@@ -31,6 +31,14 @@ export default function Login ( { navigation } ) {
           Cadastrar
         </Text>
       </TouchableOpacity>
+
+
+      <TouchableOpacity style= {styles.btnCadastrar} onPress= {()=> navigation.navigate('Home')}>
+        <Text style= {{color:'white', textAlign:'center'}}>
+          Home
+        </Text>
+      </TouchableOpacity>
+
 
     </View>
   );
