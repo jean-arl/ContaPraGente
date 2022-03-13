@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
-
+import {TextInputMask} from 'react-native-mask-input';
 
 export default function Cadastro (){
 
 const [Nome,setNome] = useState('');
-const [Sobrenome,setSobreNome] = useState('');
+const [Telefone,setTelefone] = useState('');
 const [email, setEmail] = useState('');
 const [confirmeEmail, setConfirmEmail] = useState('');
 const [senha, setSenha] = useState('');
@@ -13,7 +13,7 @@ const [confirmeSenha, setConfirmSenha] = useState ('');
 
   const Cadastrar =() => {
     alert (Nome);
-    alert (Sobrenome);
+    alert (Telefone);
     alert (email);
     alert (confirmeEmail);
     alert (senha);
@@ -31,13 +31,13 @@ const [confirmeSenha, setConfirmSenha] = useState ('');
             </Text>
             <TextInput placeholder='Digite Seu Nome...' style={styles.InputCadastro} 
             onChangeText= { text=>setNome(text)} />
-            <TextInput placeholder='Digite Seu Sobrenome...' style={styles.InputCadastro} 
-            onChangeText= { text=>setSobreNome(text)} />
+            <TextInput placeholder='Digite Seu Telefone...' style={styles.InputCadastro} 
+            onChangeText= { text=>setTelefone(text)} keyboardType='phone-pad' returnKeyType="done" />
             <TextInput placeholder='Digite Seu E-mail...' style={styles.InputCadastro} 
-            onChangeText= { text=>setEmail(text)} />
+            onChangeText= { text=>setEmail(text)} keyboardType='email-address'/>
             <TextInput placeholder='Confirme Seu E-mail...' style={styles.InputCadastro} 
-            onChangeText= { text=>setConfirmEmail(text)} />
-            <TextInput secureTextEntry='true' placeholder='Digite Sua Senha...' style={styles.InputCadastro} onChangeText= { text=>setSenha(text)} />
+            onChangeText= { text=>setConfirmEmail(text)} keyboardType='email-address'/>
+            <TextInput secureTextEntry='true' placeholder='Digite Sua Senha...' style={styles.InputCadastro} onChangeText= { text=>setSenha(text)}/>
             <TextInput secureTextEntry='true' placeholder='Confirme Sua Senha...' style={styles.InputCadastro} onChangeText= { text=>setConfirmSenha(text)} />
             <TouchableOpacity style= {styles.btnCadastrar} onPress= {()=> Cadastrar('')}>
               <Text style= {{color:'white', textAlign:'center'}}>
