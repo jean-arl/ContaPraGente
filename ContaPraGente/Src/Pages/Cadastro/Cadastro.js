@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
 
 
 export default function Cadastro (){
@@ -21,7 +21,7 @@ const [confirmeSenha, setConfirmSenha] = useState ('');
   }
 
     return (
-        <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} style={{backgroundColor: '#a2d2ff'}} keyboardVerticalOffset={100}>
+      <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : null} keyboardVerticalOffset={10}>
           <ScrollView style= {{width: '100%'}}>
 
           <Image style={styles.Logo} source={require('../Login/LogoContaPraGente.png')}/>
@@ -45,7 +45,7 @@ const [confirmeSenha, setConfirmSenha] = useState ('');
               </Text>
             </TouchableOpacity>
             </ScrollView>
-        </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
     );
 }
 
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#a2d2ff'
-},
+  },
 
 InputCadastro: {
     position: 'relative',
@@ -81,7 +81,8 @@ btnCadastrar: {
 Logo:{
   height: 300,
   width: 400,
-  marginTop: -60
-}
+  marginTop: 10,
+  marginLeft: -15
+},
 
 })
