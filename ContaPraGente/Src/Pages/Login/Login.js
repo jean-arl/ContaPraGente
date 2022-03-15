@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Platform } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Platform, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback } from 'react-native';
 
 export default function Login ( { navigation } ) {
   
   return (
+    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+      <TouchableWithoutFeedback onPress={ () => Keyboard.dismiss() } >
     <View style={styles.container}>
 
-     <Image style={styles.Logo} source={require('../Login/LogoContaPraGente.png')}/>
+    <Image style={styles.Logo} source={require('../Login/LogoContaPraGente.png')}/>
 
       <TextInput placeholder='Digite Seu E-mail...' style={styles.InputLogin} />
       <TextInput secureTextEntry='true' placeholder='Digite Sua Senha...' style={styles.InputLogin} />
@@ -44,12 +46,17 @@ export default function Login ( { navigation } ) {
 
 
     </View>
+
+      </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    marginTop: '-1%', 
+    maxHeight: '100%',
+    minHeight: '101%',
     backgroundColor: '#a2d2ff',
     alignItems: 'center',
     justifyContent: 'center',
@@ -83,6 +90,7 @@ const styles = StyleSheet.create({
 
   btnCadastrar:{
     color: '#072ac8',
+    fontWeight: 'bold',
   },
  
 
