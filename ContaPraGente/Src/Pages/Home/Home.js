@@ -1,12 +1,21 @@
 import React from 'react';
-import { Text, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Image, SafeAreaView, ScrollView } from 'react-native';
 
 
-export default function Perfil () {
+export default function Home () {
     return (
-        <ScrollView style={{ width:'100%' }}>
-            <Text style={{textAlign: 'center' , textDecorationColor: 'Red', textTransform: 'uppercase'}}>Home</Text>
-        </ScrollView>
+      <ScrollView style={styles.container}>
+          <SafeAreaView>
+              <Text>Bem Vindo A Home</Text>
+          </SafeAreaView>
+      </ScrollView>
 
-    )
+    );
 }
+
+const styles = StyleSheet.create ({
+    container:{
+        backgroundColor: '#a2d2ff'
+    }
+
+});

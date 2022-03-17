@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Platform, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Login ( { navigation } ) {
   
   return (
+    
     <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <TouchableWithoutFeedback onPress={ () => Keyboard.dismiss() } >
     <View style={styles.container}>
@@ -14,14 +16,15 @@ export default function Login ( { navigation } ) {
       <TextInput secureTextEntry='true' placeholder='Digite Sua Senha...' style={styles.InputLogin} />
 
       <View style={styles.forgotContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress= {()=> navigation.navigate('EsqueciMinhaSenha')}>
           <Text style={styles.forgotText}>Esqueceu sua Senha ?</Text>
         </TouchableOpacity>
       </View>
 
       <TouchableOpacity style={styles.btnEntrar}>
 
-        <Text style={{color:'white', textAlign:'center'}}>Entrar</Text>
+        <Text style={{color:'white', textAlign:'center', fontWeight: 'bold'}} 
+        onPress= {()=> navigation.navigate('Home')}>Acessar</Text>
 
       </TouchableOpacity>
 
@@ -32,31 +35,24 @@ export default function Login ( { navigation } ) {
       </View>
 
       <View style={{flexDirection:'row', marginTop: '10%'}}>
-        <Text style= {{ color:'#001219', textAlign:'center', paddingRight: 20}}>Não Possui Uma Conta?</Text>
+        <Text style= {{ color:'#001219', textAlign:'center', paddingRight: 20, fontWeight: 'bold', fontSize:'14'}}>
+          Não Possui Uma Conta?</Text>
         <TouchableOpacity onPress= {()=> navigation.navigate('Cadastro')}>
           <Text style= {styles.btnCadastrar}>Cadastre-se</Text>
         </TouchableOpacity>
       </View>
-
-      <TouchableOpacity style= {{marginTop: '10%'}} onPress= {()=> navigation.navigate('Home')}>
-        <Text style= {{color:'white', textAlign:'center'}}>
-          Home
-        </Text>
-      </TouchableOpacity>
-
-
-    </View>
+      </View>
 
       </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
+   
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: '-1%', 
+  container: { 
     maxHeight: '100%',
-    minHeight: '101%',
+    minHeight: '100%',
     backgroundColor: '#a2d2ff',
     alignItems: 'center',
     justifyContent: 'center',
@@ -97,7 +93,8 @@ const styles = StyleSheet.create({
   forgotContainer:{
     width: '90%',
     alignItems: 'flex-end',
-    marginBottom: '10%'
+    marginBottom: '10%',
+    fontWeight: 'bold',
   },
 
   forgotText:{

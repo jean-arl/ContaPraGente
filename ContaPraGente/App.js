@@ -8,12 +8,12 @@ import Routes from "../ContaPraGente/Src/Routes/Routes";
 
 export default function App ( ) {
   return (
-    <NavigationContainer>
+  <NavigationContainer>
 
-     <StatusBar backgroundColor= "#38A69D" barStyle="dark-content"/>
+  <StatusBar backgroundColor= "#38A69D" barStyle="dark-content"/>
 
-     < Routes />
+  < Routes />
 
-    </NavigationContainer>
+  </NavigationContainer>
   );
 }
