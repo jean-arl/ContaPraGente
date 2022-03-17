@@ -11,9 +11,9 @@ export default function EsqueciMinhaSenha (){
 
             <TextInput style={styles.btnInput} placeholder='Digite Seu E-mail...'/>
 
-            <TouchableOpacity style={styles.btnEntrar}>
+            <TouchableOpacity style={styles.btnReset}>
 
-            <Text style={styles.btnReset}> Acessar </Text>
+            <Text style={{color: '#fff', textAlign: 'center', marginTop: 7, fontWeight: 'bold'}}> Resetar </Text>
 
             </TouchableOpacity>   
         </SafeAreaView>
@@ -31,9 +31,10 @@ const styles = StyleSheet.create({
     Title:{
         marginTop: 150,
         textAlign: 'center',
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: 'bold',
-        marginBottom: 30
+        marginBottom: 30, 
+        
     },
 
     btnInput:{
@@ -41,14 +42,16 @@ const styles = StyleSheet.create({
         width: '90%',
         borderRadius: 10,
         height: 40,
-        marginBottom: 15,
-        marginLeft: 20
+        marginBottom: 30,
+        alignSelf: 'center',
+        paddingLeft: 15
     },
 
     btnReset:{
         backgroundColor: '#5e60ce',
         width: '70%',
         height: 35,
-        borderRadius: 20
+        borderRadius: 10,
+        alignSelf: 'center'
     }
 });
