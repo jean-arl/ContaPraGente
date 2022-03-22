@@ -13,7 +13,7 @@ export default function EsqueciMinhaSenha (){
 
             <TouchableOpacity style={styles.btnReset}>
 
-            <Text style={{color: '#fff', textAlign: 'center', marginTop: 7, fontWeight: 'bold'}}> Resetar </Text>
+            <Text style={{color: '#fff', textAlign: 'center', marginTop: 7, fontWeight: 'bold'}}> Enviar </Text>
 
             </TouchableOpacity>   
         </SafeAreaView>

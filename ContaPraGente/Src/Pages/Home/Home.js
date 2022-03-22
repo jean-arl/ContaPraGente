@@ -1,13 +1,15 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image, SafeAreaView, ScrollView } from 'react-native';
+import { Text, StyleSheet, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
 
 
-export default function Home () {
+export default function Home ({navigation}) {
     return (
       <ScrollView style={styles.container}>
-          <SafeAreaView>
-              <Text>Bem Vindo A Home</Text>
-          </SafeAreaView>
+         <SafeAreaView>
+         <TouchableOpacity onPress= {()=> navigation.navigate('Perfil')}>
+          <Text style={{textAlign:'center', marginTop: 250, fontSize: 25, fontWeight:'bold'}}>Home</Text>
+        </TouchableOpacity>
+        </SafeAreaView>
       </ScrollView>
 
     );
@@ -16,6 +18,6 @@ export default function Home () {
 const styles = StyleSheet.create ({
     container:{
         backgroundColor: '#a2d2ff'
-    }
+    },
 
 });

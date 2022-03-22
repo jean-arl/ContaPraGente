@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Platform, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Login ( { navigation } ) {
   
@@ -98,7 +97,9 @@ const styles = StyleSheet.create({
   },
 
   forgotText:{
-    color: '#001219'
+    color: '#001219',
+    fontWeight: 'bold',
+    color: 'red'
   },
 
   divisor:{
