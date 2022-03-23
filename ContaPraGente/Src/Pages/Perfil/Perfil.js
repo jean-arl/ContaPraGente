@@ -5,7 +5,6 @@ export default function Perfil (){
     return (
         <ScrollView style={styles.container}>
             <SafeAreaView>
-                <Text style={{textAlign:'center', fontWeight:'bold', fontSize:25}}>Perfil</Text>
                 
             </SafeAreaView>
         </ScrollView>

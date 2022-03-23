@@ -5,7 +5,6 @@ export default function Config (){
     return (
         <ScrollView style={styles.container}>
             <SafeAreaView>
-                <Text style={{textAlign:'center', fontWeight:'bold', fontSize:25}}>Config</Text>
                 
             </SafeAreaView>
         </ScrollView>

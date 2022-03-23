@@ -46,9 +46,9 @@ function Tabs (){
       inactiveTintColor: '#777'   
     }}>
 
-      <Tab.Screen name='Home' component={Home} />
-
       <Tab.Screen name='Perfil' component={Perfil} />
+
+      <Tab.Screen name='Home' component={Home} />
 
       <Tab.Screen name='Config' component={Config} />      
       
