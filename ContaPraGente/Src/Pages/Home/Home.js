@@ -1,12 +1,12 @@
 import React from 'react';
-import { Text, StyleSheet, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
+import { Container, StyleSheet, SafeAreaView, ScrollView, Text } from 'react-native';
 
 
-export default function Home ({navigation}) {
+export default function Home () {
     return (
       <ScrollView style={styles.container}>
          <SafeAreaView>
-          
+
         </SafeAreaView>
       </ScrollView>
 
