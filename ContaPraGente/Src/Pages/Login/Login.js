@@ -4,13 +4,13 @@ import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Platform, K
 export default function Login ( { navigation } ) {
   
   return (
-    
+  
     <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <TouchableWithoutFeedback onPress={ () => Keyboard.dismiss() } >
     <View style={styles.container}>
-
+    
     <Image style={styles.Logo} source={require('../Login/LogoContaPraGente.png')}/>
-
+    
       <TextInput placeholder='Digite Seu E-mail...' style={styles.InputLogin} />
       <TextInput secureTextEntry='true' placeholder='Digite Sua Senha...' style={styles.InputLogin} />
 
@@ -34,7 +34,7 @@ export default function Login ( { navigation } ) {
       </View>
 
       <View style={{flexDirection:'row', marginTop: '10%'}}>
-        <Text style= {{ color:'#001219', textAlign:'center', paddingRight: 20, fontWeight: 'bold', fontSize:'14'}}>
+        <Text style= {{ color:'#001219', textAlign:'center', paddingRight: 20, fontWeight: 'bold', fontSize:'14', marginTop:-50}}>
           Não Possui Uma Conta?</Text>
         <TouchableOpacity onPress= {()=> navigation.navigate('Cadastro')}>
           <Text style= {styles.btnCadastrar}>Cadastre-se</Text>
@@ -44,12 +44,11 @@ export default function Login ( { navigation } ) {
 
       </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
-   
   );
 }
 
 const styles = StyleSheet.create({
-  container: { 
+  container: {
     maxHeight: '100%',
     minHeight: '100%',
     backgroundColor: '#a2d2ff',
@@ -59,11 +58,12 @@ const styles = StyleSheet.create({
   },
   
   Logo:{
-   marginTop: Platform.OS === 'android' ? '-13%' : '-20%',
-   width: Platform.OS === 'android' ? '100%' : '100%',
-   height: Platform.OS === 'android' ? '50%' : '50%',
-   marginBottom: Platform.OS === 'android' ? '-20%' : '-30%',
-  },
+  flex:1,
+  marginTop: Platform.OS === 'android' ? '-13%' : '20%',
+  width: Platform.OS === 'android' ? '100%' : '100%',
+  height: Platform.OS === 'android' ? '50%' : '50%',
+  marginBottom: Platform.OS === 'android' ? '-10%' : '10%',
+},
 
   InputLogin: {
     backgroundColor: 'white',
@@ -84,8 +84,10 @@ const styles = StyleSheet.create({
   },
 
   btnCadastrar:{
+    flex: 1,
     color: '#072ac8',
     fontWeight: 'bold',
+    marginTop: -50
   },
  
 
@@ -103,7 +105,7 @@ const styles = StyleSheet.create({
   },
 
   divisor:{
-    marginTop: '50%',
+    flex: 1,
     flexDirection: 'row',
     width: '90%',
     alignItems: 'center',

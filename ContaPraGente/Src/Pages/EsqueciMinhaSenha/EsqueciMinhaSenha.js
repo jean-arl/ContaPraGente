@@ -6,7 +6,7 @@ export default function EsqueciMinhaSenha (){
         <ScrollView style={styles.container} >
 
         <SafeAreaView>
-                
+            
             <Text style={styles.Title}>Resetar Senha</Text>
 
             <TextInput style={styles.btnInput} placeholder='Digite Seu E-mail...'/>
