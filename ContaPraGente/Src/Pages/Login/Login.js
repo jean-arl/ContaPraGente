@@ -5,14 +5,13 @@ export default function Login ( { navigation } ) {
   
   return (
   
-    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-      <TouchableWithoutFeedback onPress={ () => Keyboard.dismiss() } >
+    <TouchableWithoutFeedback onPress={ () => Keyboard.dismiss() } >
     <View style={styles.container}>
     
     <Image style={styles.Logo} source={require('../Login/LogoContaPraGente.png')}/>
     
-      <TextInput placeholder='Digite Seu E-mail...' style={styles.InputLogin} />
-      <TextInput secureTextEntry='true' placeholder='Digite Sua Senha...' style={styles.InputLogin} />
+      <TextInput placeholder='Digite Seu E-mail...' style={styles.InputLogin}/>
+      <TextInput secureTextEntry='true' placeholder='Digite Sua Senha...' style={styles.InputLogin} returnKeyType="done"/>
 
       <View style={styles.forgotContainer}>
         <TouchableOpacity onPress= {()=> navigation.navigate('EsqueciMinhaSenha')}>
@@ -29,21 +28,24 @@ export default function Login ( { navigation } ) {
 
       <View style={styles.divisor}>
         <View style={styles.divisorLine}></View>
-          <Text>Ou</Text>
+          <Text style={{flex:1, left: 6}}>Ou</Text>
         <View style={styles.divisorLine}></View>
       </View>
 
-      <View style={{flexDirection:'row', marginTop: '10%'}}>
-        <Text style= {{ color:'#001219', textAlign:'center', paddingRight: 20, fontWeight: 'bold', fontSize:'14', marginTop:-50}}>
+      <View style={{flex: 1 ,flexDirection:'row', marginTop: '10%'}}>
+
+        <Text style= {{ color:'#001219', textAlign:'center', paddingRight: 20, fontWeight: 'bold', fontSize:'14', marginTop: 50}}>
+
           Não Possui Uma Conta?</Text>
+
         <TouchableOpacity onPress= {()=> navigation.navigate('Cadastro')}>
           <Text style= {styles.btnCadastrar}>Cadastre-se</Text>
         </TouchableOpacity>
+
       </View>
       </View>
 
       </TouchableWithoutFeedback>
-    </KeyboardAvoidingView>
   );
 }
 
@@ -87,7 +89,7 @@ const styles = StyleSheet.create({
     flex: 1,
     color: '#072ac8',
     fontWeight: 'bold',
-    marginTop: -50
+    marginTop: 50
   },
  
 
