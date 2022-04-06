@@ -1,10 +1,8 @@
 import React from "react";
 
-import { View, styles, StyleSheet } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
-import LinearGradient from 'react-native-linear-gradient';
 
 
 import Login from "../Pages/Login/Login";
@@ -45,10 +43,9 @@ function Tabs (){
       activeTintColor: '#9C27B0',
       inactiveTintColor: '#777'   
     }}>
-      
-      <Tab.Screen name='Home' component={Home} />
+       <Tab.Screen name='Perfil' component={Perfil} />
 
-      <Tab.Screen name='Perfil' component={Perfil} />
+       <Tab.Screen name='Home' component={Home} />
 
       <Tab.Screen name='Config' component={Config} />      
       

@@ -1,11 +1,12 @@
 import React from "react";
-import { SafeAreaView, ScrollView, StyleSheet, Text } from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet} from "react-native";
+
 
 export default function Perfil (){
     return (
         <ScrollView style={styles.container}>
             <SafeAreaView>
-                
+            
             </SafeAreaView>
         </ScrollView>
     );
