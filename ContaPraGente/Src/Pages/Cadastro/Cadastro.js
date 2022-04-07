@@ -6,17 +6,13 @@ export default function Cadastro (){
 const [Nome,setNome] = useState('');
 const [Telefone,setTelefone] = useState('');
 const [email, setEmail] = useState('');
-const [confirmeEmail, setConfirmEmail] = useState('');
 const [senha, setSenha] = useState('');
-const [confirmeSenha, setConfirmSenha] = useState ('');
 
   const Cadastrar =() => {
     alert (Nome);
     alert (Telefone);
     alert (email);
-    alert (confirmeEmail);
     alert (senha);
-    alert (confirmeSenha);
   }
 
     return (
@@ -47,22 +43,10 @@ const [confirmeSenha, setConfirmSenha] = useState ('');
             keyboardType='email-address'/>
 
 
-            <TextInput placeholder='Confirme Seu E-mail...' 
-            style={styles.InputCadastro} 
-            onChangeText= { text=>setConfirmEmail(text)} 
-            keyboardType='email-address'/>
-
-
             <TextInput secureTextEntry='true' 
             placeholder='Digite Sua Senha...' 
             style={styles.InputCadastro} 
             onChangeText= { text=>setSenha(text)}/>
-
-            
-            <TextInput secureTextEntry='true' 
-            placeholder='Confirme Sua Senha...' 
-            style={styles.InputCadastro} 
-            onChangeText= { text=>setConfirmSenha(text)} />
 
 
             <TouchableOpacity style= {styles.btnCadastrar} onPress= {()=> Cadastrar('')}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, StyleSheet, SafeAreaView, ScrollView, Text, TouchableOpacity } from 'react-native';
+import { Container, StyleSheet, SafeAreaView, ScrollView, Text, TouchableOpacity, Image } from 'react-native';
 
 
 export default function Home () {
