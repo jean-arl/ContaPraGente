@@ -28,22 +28,22 @@ const [senha, setSenha] = useState('');
 
             <TextInput placeholder='Digite Seu Nome...' 
             style={styles.InputCadastro} 
-            onChangeText= { text=>setNome(text)} />
+            onChangeText= { text=> setNome (text)} />
 
 
             <TextInput placeholder='Digite Seu Telefone...' 
             style={styles.InputCadastro} 
-            onChangeText= { text=>setTelefone(text)} 
+            onChangeText= { text=> setTelefone (text) } 
             keyboardType='phone-pad' returnKeyType="done" />
 
 
             <TextInput placeholder='Digite Seu E-mail...' 
             style={styles.InputCadastro} 
-            onChangeText= { text=>setEmail(text)} 
+            onChangeText= { text=> setEmail (text) } 
             keyboardType='email-address'/>
 
 
-            <TextInput secureTextEntry='true' 
+            <TextInput secureTextEntry={true} 
             placeholder='Digite Sua Senha...' 
             style={styles.InputCadastro} 
             onChangeText= { text=>setSenha(text)}/>
