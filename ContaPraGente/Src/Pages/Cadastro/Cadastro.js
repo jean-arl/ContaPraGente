@@ -31,12 +31,6 @@ const [senha, setSenha] = useState('');
             onChangeText= { text=> setNome (text)} />
 
 
-            <TextInput placeholder='Digite Seu Telefone...' 
-            style={styles.InputCadastro} 
-            onChangeText= { text=> setTelefone (text) } 
-            keyboardType='phone-pad' returnKeyType="done" />
-
-
             <TextInput placeholder='Digite Seu E-mail...' 
             style={styles.InputCadastro} 
             onChangeText= { text=> setEmail (text) } 
