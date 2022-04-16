@@ -1,19 +1,22 @@
 import React, {useState} from "react";
 import { StyleSheet, Text, Image, TextInput, TouchableOpacity, ScrollView, KeyboardAvoidingView, Platform, Alert } from 'react-native';
 
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../Conection/firebaseConection";
+
 export default function Cadastro (){
 
-const [Nome,setNome] = useState('');
-const [Telefone,setTelefone] = useState('');
+const [name,setName] = useState('');
 const [email, setEmail] = useState('');
-const [senha, setSenha] = useState('');
+const [password, setPassword] = useState('');
 
-  const Cadastrar =() => {
-    alert (Nome);
-    alert (Telefone);
-    alert (email);
-    alert (senha);
-  }
+  async function Cadastrar() {
+    await createUserWithEmailAndPassword(auth, email, password)
+    .then( value => {
+     Alert.alert ('sucesso','cadastrado com sucesso!' + value.user.uid);
+    })
+    .catch(error => console.log(error));
+  };
 
     return (
 
@@ -26,24 +29,30 @@ const [senha, setSenha] = useState('');
                 Informe Seus Dados
             </Text>
 
-            <TextInput placeholder='Digite Seu Nome...' 
+            <TextInput 
+            placeholder='Digite Seu Nome...' 
+            value={name}
             style={styles.InputCadastro} 
-            onChangeText= { text=> setNome (text)} />
+            onChangeText= { value => setName (value)} />
 
 
-            <TextInput placeholder='Digite Seu E-mail...' 
+            <TextInput 
+            placeholder='Digite Seu E-mail...' 
+            value={email}
             style={styles.InputCadastro} 
-            onChangeText= { text=> setEmail (text) } 
+            onChangeText= { value => setEmail (value) } 
             keyboardType='email-address'/>
 
 
             <TextInput secureTextEntry={true} 
-            placeholder='Digite Sua Senha...' 
+            placeholder='Digite Sua Senha...'
+            value={password} 
             style={styles.InputCadastro} 
-            onChangeText= { text=>setSenha(text)}/>
+            onChangeText= { value =>setPassword(value)}/>
 
 
-            <TouchableOpacity style= {styles.btnCadastrar} onPress= {()=> Cadastrar('')}>
+            <TouchableOpacity style= {styles.btnCadastrar} 
+            onPress= {()=> Cadastrar()}>
               <Text style= {{color:'white', textAlign:'center'}}>
               Cadastrar
               </Text>

@@ -1,17 +1,26 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Platform, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Platform, Keyboard, TouchableWithoutFeedback } from 'react-native';
+import { auth } from "../../Conection/firebaseConection";
+
 
 export default function Login ( { navigation } ) {
-  
-  return (
+
+ return (
   
     <TouchableWithoutFeedback onPress={ () => Keyboard.dismiss() } >
     <View style={styles.container}>
     
     <Image style={styles.Logo} source={require('../Login/LogoContaPraGente.png')}/>
     
-      <TextInput placeholder='Digite Seu E-mail...' style={styles.InputLogin}/>
-      <TextInput secureTextEntry={true} placeholder='Digite Sua Senha...' style={styles.InputLogin} returnKeyType="done"/>
+      <TextInput 
+      placeholder='Digite Seu E-mail...' 
+      style={styles.InputLogin}/>
+
+      <TextInput 
+      secureTextEntry={true}
+      placeholder='Digite Sua Senha...'
+      style={styles.InputLogin} 
+      returnKeyType="done"/>
 
       <View style={styles.forgotContainer}>
         <TouchableOpacity onPress= {()=> navigation.navigate('EsqueciMinhaSenha')}>
