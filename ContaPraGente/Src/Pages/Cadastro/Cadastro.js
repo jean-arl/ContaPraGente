@@ -1,9 +1,6 @@
 import React, {useState} from "react";
 import { StyleSheet, Text, Image, TextInput, TouchableOpacity, ScrollView, KeyboardAvoidingView, Platform, Alert } from 'react-native';
 
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../Conection/firebaseConection";
-
 export default function Cadastro (){
 
 const [name,setName] = useState('');
@@ -11,11 +8,7 @@ const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
 
   async function Cadastrar() {
-    await createUserWithEmailAndPassword(auth, email, password)
-    .then( value => {
-     Alert.alert ('sucesso','cadastrado com sucesso!' + value.user.uid);
-    })
-    .catch(error => console.log(error));
+    
   };
 
     return (

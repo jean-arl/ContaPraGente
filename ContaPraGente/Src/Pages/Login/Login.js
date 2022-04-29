@@ -1,9 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Platform, Keyboard, TouchableWithoutFeedback } from 'react-native';
-import { auth } from "../../Conection/firebaseConection";
+
+import Api from '../../Api';
 
 
 export default function Login ( { navigation } ) {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const login = async() => {
+    if (email != '' && password != ''){
+
+      let json = await Api.Login (email, password);
+      if (json.token){
+
+      } else {
+        alert('E-mail e/ou senha Incorretos!')
+      }
+
+    } else {
+      alert("Preencha os Campos!")
+    }
+  }
+  
 
  return (
   
@@ -14,24 +34,24 @@ export default function Login ( { navigation } ) {
     
       <TextInput 
       placeholder='Digite Seu E-mail...' 
-      style={styles.InputLogin}/>
+      value={email}
+      style={styles.InputLogin}
+      onChangeText= { value => setEmail (value) }
+      keyboardType= 'email-address'
+      />
 
       <TextInput 
       secureTextEntry={true}
       placeholder='Digite Sua Senha...'
+      value={password}
       style={styles.InputLogin} 
+      onChangeText= { value => setPassword (value) }
       returnKeyType="done"/>
-
-      <View style={styles.forgotContainer}>
-        <TouchableOpacity onPress= {()=> navigation.navigate('EsqueciMinhaSenha')}>
-          <Text style={styles.forgotText}>Esqueceu sua Senha ?</Text>
-        </TouchableOpacity>
-      </View>
 
       <TouchableOpacity style={styles.btnEntrar}>
 
         <Text style={{color:'white', textAlign:'center', fontWeight: 'bold'}} 
-        onPress= {()=> navigation.navigate('Home')}>Acessar</Text>
+        onPress= {login}>Acessar</Text>
 
       </TouchableOpacity>
 
@@ -99,14 +119,6 @@ const styles = StyleSheet.create({
     color: '#072ac8',
     fontWeight: 'bold',
     marginTop: 50
-  },
- 
-
-  forgotContainer:{
-    width: '90%',
-    alignItems: 'flex-end',
-    marginBottom: '10%',
-    fontWeight: 'bold',
   },
 
   forgotText:{

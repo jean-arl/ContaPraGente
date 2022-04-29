@@ -8,9 +8,8 @@ import Icon from 'react-native-vector-icons/Feather';
 import Login from "../Pages/Login/Login";
 import Cadastro from "../Pages/Cadastro/Cadastro";
 import Home from "../Pages/Home/Home";
-import EsqueciMinhaSenha from "../Pages/EsqueciMinhaSenha/EsqueciMinhaSenha";
 import Perfil from "../Pages/Perfil/Perfil";
-import Config from '../Pages/Config/config';
+
 
 
 const Stack = createNativeStackNavigator ();
@@ -29,9 +28,6 @@ function Tabs (){
               case 'Perfil':
                 iconName= 'user';
                   break;
-                    case 'Config':
-                      iconName= 'settings';
-                        break;
       }
 
       return <Icon name={iconName} size={size} color={color} />;
@@ -62,11 +58,7 @@ export default function Routes ( ) {
         
         <Stack.Screen name='Home' component={Tabs} options= {{headerShown: false }}/>
 
-        <Stack.Screen name='EsqueciMinhaSenha' component={EsqueciMinhaSenha} options= {{headerShown: false }}/>
-
         <Stack.Screen name='Perfil' component={Tabs} options= {{headerShown: false }}/>
-
-        <Stack.Screen name='Config' component={Tabs} options= {{headerShown: false }}/>
 
       </Stack.Navigator>
   );

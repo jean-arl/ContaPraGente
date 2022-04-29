@@ -1,17 +1,13 @@
 import React from 'react';
 import { Container, StyleSheet, SafeAreaView, ScrollView, Text, TouchableOpacity, Image } from 'react-native';
+import { TextInput } from 'react-native-web';
 
 
 export default function Home () {
     return (
       <ScrollView style={styles.container}>
          <SafeAreaView>
-          <ScrollView>
             
-          </ScrollView>
-          <TouchableOpacity style={styles.BtnAdd}>
-            <Text style={styles.IconAdd}>+</Text>
-          </TouchableOpacity>
         </SafeAreaView>
       </ScrollView>
 
