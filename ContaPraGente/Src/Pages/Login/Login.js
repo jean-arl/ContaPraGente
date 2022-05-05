@@ -63,7 +63,7 @@ export default function Login ( { navigation } ) {
 
       <View style={{flex: 1 ,flexDirection:'row', marginTop: '10%'}}>
 
-        <Text style= {{ color:'#001219', textAlign:'center', paddingRight: 20, fontWeight: 'bold', fontSize:'14', marginTop: 50}}>
+        <Text style= {{ color:'#001219', textAlign:'center', paddingRight: 20, fontWeight: 'bold', fontSize: 14, marginTop: 50}}>
 
           Não Possui Uma Conta?</Text>
 
