@@ -1,24 +1,41 @@
-import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, Text, KeyboardAvoidingView, TextInput, TouchableOpacity, ScrollViewBase } from 'react-native';
 
 import Denuncias from '../components/denuncias';
 
 
 
 export default function Home () {
+  const [reclama, setReclama] = useState();
+
+
+
     return (
+    
       <View style={styles.container}>
-        
-        <View style={styles.Denuncias}>
-          <Text style={styles.Tittle}>Minhas Denuncias</Text>
+        <View style={styles.ListaDenuncias}>
+          <Text style={styles.Tittle}>Denuncias</Text>
 
           <View style={styles.List}>
-            < Denuncias text={'Rua Sem Iluminação'} />
-            < Denuncias text={'Ciclovia Sem Condições de Uso'} />
-            < Denuncias text={'Bueiro Sem Tampa'} />
-            < Denuncias text={'Ponto de Onibus Sem cobertura'} />
-            < Denuncias text={'Arvore Caida na via'} />
-          </View>
+            < Denuncias text={'denuncia 1'} />
+            < Denuncias text={'denuncia 2'} />
+            < Denuncias text={'denuncia 3'} />
+            < Denuncias text={'denuncia 4'} />
+            < Denuncias text={'denuncia 5'} />
+          </View> 
+
+            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding':'height'}
+            style={styles.escNewReclama}>
+
+              <TextInput style={styles.input} placeholder={'Faça Sua Denuncia'}/>
+
+              <TouchableOpacity>
+                <View style={styles.add}>
+                  <Text style={styles.addText}>+</Text>
+                </View>
+              </TouchableOpacity>
+
+            </KeyboardAvoidingView>
 
         </View>
 
@@ -54,15 +71,17 @@ const styles = StyleSheet.create ({
     fontWeight: 'bold'
   },
 
-  Denuncias:{
+  ListaDenuncias:{
     alignContent: 'center',
     alignItems: 'center',
     marginTop: 25,
   },
 
   Tittle:{
-    fontSize: 25,
-    fontWeight: 'bold'
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginLeft: -220,
+    marginTop: -10
   },
 
   List:{
@@ -70,5 +89,33 @@ const styles = StyleSheet.create ({
     padding: 50,
     width: 430
   },
+
+  escNewReclama:{
+    backgroundColor: '#fff',
+    padding: 30,
+    width: '80%',
+    borderRadius: 20,
+    borderColor: '#c0c0c0',
+    borderWidth: 1,
+    marginLeft: -55
+  },
+
+  add:{
+    width: 50,
+    height: 50,
+    marginTop: -50,
+    marginLeft: 280,
+    backgroundColor: '#fff',
+    borderRadius: 30,
+
+  },  
+
+  addText:{
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 8,
+    fontSize: 25
+  },  
 
 });

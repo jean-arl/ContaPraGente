@@ -31,7 +31,7 @@ export default function Login ( { navigation } ) {
     <Image style={styles.Logo} source={require('../Login/LogoContaPraGente.png')}/>
     
       <TextInput 
-      placeholder='Digite Seu E-mail...' 
+      placeholder='Informe Seu E-mail...' 
       value={email}
       style={styles.InputLogin}
       onChangeText= { value => setEmail (value) }
@@ -39,8 +39,8 @@ export default function Login ( { navigation } ) {
       />
 
       <TextInput 
+      placeholder='Informe Sua Senha...'
       secureTextEntry={true}
-      placeholder='Digite Sua Senha...'
       value={password}
       style={styles.InputLogin} 
       onChangeText= { value => setPassword (value) }
