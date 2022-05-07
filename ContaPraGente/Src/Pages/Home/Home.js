@@ -17,6 +17,7 @@ export default function Home () {
             < Denuncias text={'Ciclovia Sem Condições de Uso'} />
             < Denuncias text={'Bueiro Sem Tampa'} />
             < Denuncias text={'Ponto de Onibus Sem cobertura'} />
+            < Denuncias text={'Arvore Caida na via'} />
           </View>
 
         </View>
