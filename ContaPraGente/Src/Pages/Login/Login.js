@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Platform, Keyboard, TouchableWithoutFeedback } from 'react-native';
 
-import Api from '../../Api';
-
 
 export default function Login ( { navigation } ) {
 
@@ -51,7 +49,7 @@ export default function Login ( { navigation } ) {
       <TouchableOpacity style={styles.btnEntrar}>
 
         <Text style={{color:'white', textAlign:'center', fontWeight: 'bold'}} 
-        onPress= {login}>Acessar</Text>
+        onPress= {()=> navigation.navigate('Home')}>Acessar</Text>
 
       </TouchableOpacity>
 

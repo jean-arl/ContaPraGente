@@ -1,15 +1,27 @@
 import React from 'react';
-import { Container, StyleSheet, SafeAreaView, ScrollView, Text, TouchableOpacity, Image } from 'react-native';
-import { TextInput } from 'react-native-web';
+import { StyleSheet, View, Text } from 'react-native';
+
+import Denuncias from '../components/denuncias';
+
 
 
 export default function Home () {
     return (
-      <ScrollView style={styles.container}>
-         <SafeAreaView>
-            
-        </SafeAreaView>
-      </ScrollView>
+      <View style={styles.container}>
+        
+        <View style={styles.Denuncias}>
+          <Text style={styles.Tittle}>Minhas Denuncias</Text>
+
+          <View style={styles.List}>
+            < Denuncias text={'Rua Sem Iluminação'} />
+            < Denuncias text={'Ciclovia Sem Condições de Uso'} />
+            < Denuncias text={'Bueiro Sem Tampa'} />
+            < Denuncias text={'Ponto de Onibus Sem cobertura'} />
+          </View>
+
+        </View>
+
+      </View>
 
     );
 }
@@ -17,6 +29,7 @@ export default function Home () {
 
 const styles = StyleSheet.create ({
   container:{
+      flex: 1,
       backgroundColor: '#a2d2ff'
   },
 
@@ -38,6 +51,23 @@ const styles = StyleSheet.create ({
     fontSize: 25,
     textAlign: 'center',
     fontWeight: 'bold'
-  }
+  },
+
+  Denuncias:{
+    alignContent: 'center',
+    alignItems: 'center',
+    marginTop: 25,
+  },
+
+  Tittle:{
+    fontSize: 25,
+    fontWeight: 'bold'
+  },
+
+  List:{
+    fontWeight: 'bold',
+    padding: 50,
+    width: 430
+  },
 
 });
