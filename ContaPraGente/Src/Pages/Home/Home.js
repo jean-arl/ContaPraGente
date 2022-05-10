@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, KeyboardAvoidingView, TextInput, TouchableOpacity, ScrollViewBase } from 'react-native';
+import { StyleSheet, View, Text, KeyboardAvoidingView, TextInput, TouchableOpacity, ScrollViewBase, Keyboard, ScrollView } from 'react-native';
 
 import Denuncias from '../components/denuncias';
 
@@ -7,29 +7,37 @@ import Denuncias from '../components/denuncias';
 
 export default function Home () {
   const [reclama, setReclama] = useState();
+  const [reclamaLista, setReclamaLista] = useState([]);
 
+  const addReclama = () => {
+    Keyboard.dismiss();
+    setReclamaLista([...reclamaLista, reclama])
+    setReclama(null);
+  }
 
+  const apagarDenuncia = (index) => {
+    let itemsDel = [...reclamaLista];
+    itemsDel.splice(index, 1);
+    setReclamaLista(itemsDel)
+  }
 
     return (
     
       <View style={styles.container}>
         <View style={styles.ListaDenuncias}>
           <Text style={styles.Tittle}>Denuncias</Text>
-
           <View style={styles.List}>
-            < Denuncias text={'denuncia 1'} />
-            < Denuncias text={'denuncia 2'} />
-            < Denuncias text={'denuncia 3'} />
-            < Denuncias text={'denuncia 4'} />
-            < Denuncias text={'denuncia 5'} />
+            {
+              reclamaLista.map((item, index) => {
+                return <Denuncias key={index} text={item} />
+              })
+            }
           </View> 
+            <KeyboardAvoidingView style={styles.escNewReclama} behavior={Platform.OS === 'ios' ? 'padding': 'height'}>
 
-            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding':'height'}
-            style={styles.escNewReclama}>
+              <TextInput style={styles.input} placeholder={'Faça Sua Denuncia'} value={reclama} onChangeText={text => setReclama(text)} />
 
-              <TextInput style={styles.input} placeholder={'Faça Sua Denuncia'}/>
-
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => addReclama()}>
                 <View style={styles.add}>
                   <Text style={styles.addText}>+</Text>
                 </View>
@@ -97,7 +105,8 @@ const styles = StyleSheet.create ({
     borderRadius: 20,
     borderColor: '#c0c0c0',
     borderWidth: 1,
-    marginLeft: -55
+    marginLeft: -55,
+    marginTop: 450
   },
 
   add:{
@@ -106,8 +115,7 @@ const styles = StyleSheet.create ({
     marginTop: -50,
     marginLeft: 280,
     backgroundColor: '#fff',
-    borderRadius: 30,
-
+    borderRadius: 30
   },  
 
   addText:{
@@ -116,6 +124,6 @@ const styles = StyleSheet.create ({
     alignItems: 'center',
     marginTop: 8,
     fontSize: 25
-  },  
+  },
 
 });
