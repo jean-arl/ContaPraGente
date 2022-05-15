@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, KeyboardAvoidingView, TextInput, TouchableOpacity, ScrollViewBase, Keyboard, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, KeyboardAvoidingView, TextInput, TouchableOpacity, Keyboard, SafeAreaView, ScrollView} from 'react-native';
 
 import Denuncias from '../components/denuncias';
 
@@ -23,19 +23,24 @@ export default function Home () {
 
     return (
     
-      <View style={styles.container}>
-        <View style={styles.ListaDenuncias}>
-          <Text style={styles.Tittle}>Denuncias</Text>
-          <View style={styles.List}>
-            {
-              reclamaLista.map((item, index) => {
-                return <Denuncias key={index} text={item} />
-              })
-            }
-          </View> 
+      <SafeAreaView style={styles.container}>
+        <ScrollView style={{width: '100%'}}>
+          <View style={styles.ListaDenuncias}>
+
+            <Text style={styles.Tittle}>Denuncias</Text>
+
+            <View style={styles.List}>
+
+              {
+                reclamaLista.map((item, index) => {
+                  return <Denuncias key={index} text={item} />
+                })
+              }
+
+            </View> 
             <KeyboardAvoidingView style={styles.escNewReclama} behavior={Platform.OS === 'ios' ? 'padding': 'height'}>
 
-              <TextInput style={styles.input} placeholder={'Faça Sua Denuncia'} value={reclama} onChangeText={text => setReclama(text)} />
+              <TextInput placeholder={"Faça Sua Denuncia"} value={reclama} onChangeText={text => setReclama(text)} />
 
               <TouchableOpacity onPress={() => addReclama()}>
                 <View style={styles.add}>
@@ -45,9 +50,9 @@ export default function Home () {
 
             </KeyboardAvoidingView>
 
-        </View>
-
-      </View>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
 
     );
 }
@@ -58,27 +63,7 @@ const styles = StyleSheet.create ({
       flex: 1,
       backgroundColor: '#a2d2ff'
   },
-
-  BtnAdd:{
-    position: 'absolute',
-    backgroundColor: '#ff5a5f',
-    borderRadius: 50,
-    padding: 15,
-    width: 60,
-    height: 60,
-    bottom:-620,
-    left: 300,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-
-  IconAdd:{
-    color: '#ffffff',
-    fontSize: 25,
-    textAlign: 'center',
-    fontWeight: 'bold'
-  },
-
+  
   ListaDenuncias:{
     alignContent: 'center',
     alignItems: 'center',
@@ -124,6 +109,6 @@ const styles = StyleSheet.create ({
     alignItems: 'center',
     marginTop: 8,
     fontSize: 25
-  },
+  }
 
 });

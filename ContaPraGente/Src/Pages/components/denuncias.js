@@ -17,6 +17,7 @@ const Denuncias = (props) => {
             </View>
                 <Text style={styles.list}> {props.text}</Text>
         </View>
+
     );
 }
 
@@ -44,7 +45,7 @@ const styles = StyleSheet.create ({
     },
 
     list:{
-        height: 25,
+        height: 25
     },
 });
 
