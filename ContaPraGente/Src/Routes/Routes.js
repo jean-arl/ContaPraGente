@@ -7,7 +7,7 @@ import Icon from 'react-native-vector-icons/Feather';
 
 import Login from "../Pages/Login/Login";
 import Cadastro from "../Pages/Cadastro/Cadastro";
-import Home from "../Pages/Home/Home";
+import Reclamações from "../Pages/Reclamações/Reclamações";
 import Perfil from "../Pages/Perfil/Perfil";
 
 
@@ -22,7 +22,7 @@ function Tabs (){
       let iconName;
 
       switch (route.name){
-        case 'Home': 
+        case 'Reclamações': 
           iconName= 'home';
             break;
               case 'Perfil':
@@ -40,7 +40,7 @@ function Tabs (){
       inactiveTintColor: '#777'   
     }}>
       
-       <Tab.Screen name='Home' component={Home} />
+       <Tab.Screen name='Reclamações' component={Reclamações} />
 
       <Tab.Screen name='Perfil' component={Perfil} />    
       
@@ -56,7 +56,7 @@ export default function Routes ( ) {
 
         <Stack.Screen name='Cadastro' component={Cadastro} options= {{headerShown: false }} />
         
-        <Stack.Screen name='Home' component={Tabs} options= {{headerShown: false }}/>
+        <Stack.Screen name='Reclamações' component={Tabs} options= {{headerShown: false }}/>
 
         <Stack.Screen name='Perfil' component={Tabs} options= {{headerShown: false }}/>
 

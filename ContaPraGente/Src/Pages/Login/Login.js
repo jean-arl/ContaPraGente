@@ -49,7 +49,7 @@ export default function Login ( { navigation } ) {
       <TouchableOpacity style={styles.btnEntrar}>
 
         <Text style={{color:'white', textAlign:'center', fontWeight: 'bold'}} 
-        onPress= {()=> navigation.navigate('Home')}>Acessar</Text>
+        onPress= {()=> navigation.navigate('Reclamações')}>Acessar</Text>
 
       </TouchableOpacity>
 
