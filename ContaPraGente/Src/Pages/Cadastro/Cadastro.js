@@ -24,13 +24,15 @@ const [password, setPassword] = useState('');
 
             <TextInput 
             placeholder='Digite Seu Nome...' 
+            placeholderTextColor={'#ced4da'}
             value={name}
             style={styles.InputCadastro} 
             onChangeText= { value => setName (value)} />
 
 
             <TextInput 
-            placeholder='Digite Seu E-mail...' 
+            placeholder='Digite Seu E-mail...'
+            placeholderTextColor={'#ced4da'} 
             value={email}
             style={styles.InputCadastro} 
             onChangeText= { value => setEmail (value) } 
@@ -39,6 +41,7 @@ const [password, setPassword] = useState('');
 
             <TextInput secureTextEntry={true} 
             placeholder='Digite Sua Senha...'
+            placeholderTextColor={'#ced4da'}
             value={password} 
             style={styles.InputCadastro} 
             onChangeText= { value =>setPassword(value)}/>

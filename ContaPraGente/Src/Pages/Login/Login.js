@@ -30,8 +30,9 @@ export default function Login ( { navigation } ) {
     
     <Image style={styles.Logo} source={require('../Login/LogoContaPraGente.png')}/>
     
-      <TextInput 
-      placeholder='Informe Seu E-mail...' 
+      <TextInput
+      placeholder='Informe Seu E-mail...'
+      placeholderTextColor={'#ced4da'}
       value={email}
       style={styles.InputLogin}
       onChangeText= { value => setEmail (value) }
@@ -40,6 +41,7 @@ export default function Login ( { navigation } ) {
 
       <TextInput 
       placeholder='Informe Sua Senha...'
+      placeholderTextColor={'#ced4da'}
       secureTextEntry={true}
       value={password}
       style={styles.InputLogin} 
@@ -100,8 +102,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 20,
     paddingLeft: 10,
-    marginBottom: 15,
-    
+    marginBottom: 15
   },
 
   btnEntrar: {

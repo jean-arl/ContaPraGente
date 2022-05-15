@@ -8,7 +8,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import Login from "../Pages/Login/Login";
 import Cadastro from "../Pages/Cadastro/Cadastro";
 import Reclamações from "../Pages/Reclamações/Reclamações";
-import Perfil from "../Pages/Perfil/Perfil";
+import Minhas_Reclamações from "../Pages/Minhas_Reclamações/Minhas_Reclamações";
 
 
 
@@ -23,9 +23,9 @@ function Tabs (){
 
       switch (route.name){
         case 'Reclamações': 
-          iconName= 'home';
+          iconName= 'edit';
             break;
-              case 'Perfil':
+              case 'Minhas Reclamações':
                 iconName= 'user';
                   break;
       }
@@ -42,7 +42,7 @@ function Tabs (){
       
        <Tab.Screen name='Reclamações' component={Reclamações} />
 
-      <Tab.Screen name='Perfil' component={Perfil} />    
+      <Tab.Screen name='Minhas Reclamações' component={Minhas_Reclamações} />    
       
     </Tab.Navigator>
   );
@@ -58,7 +58,7 @@ export default function Routes ( ) {
         
         <Stack.Screen name='Reclamações' component={Tabs} options= {{headerShown: false }}/>
 
-        <Stack.Screen name='Perfil' component={Tabs} options= {{headerShown: false }}/>
+        <Stack.Screen name='Minhas Reclamações' component={Tabs} options= {{headerShown: false }}/>
 
       </Stack.Navigator>
   );
