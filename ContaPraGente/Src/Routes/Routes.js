@@ -8,7 +8,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import Login from "../Pages/Login/Login";
 import Cadastro from "../Pages/Cadastro/Cadastro";
 import Reclama from "../Pages/Reclamações/Reclama";
-import Minhas_Reclamações from "../Pages/Minhas_Reclamações/Minhas_Reclamações";
+import Minhas_Reclamações from "../Pages/Minhas_Reclamações/MyRec";
 import NewRec from "../Pages/Reclamações/NewRec";
 
 
