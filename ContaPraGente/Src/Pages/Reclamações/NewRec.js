@@ -19,7 +19,7 @@ const [denuncia, setDenuncia] = useState('');
           <Image style={styles.Logo} source={require('../Login/LogoContaPraGente.png')}/>
 
             <Text style={{textAlign:"center", marginTop: -70, textTransform: 'uppercase', fontSize: 20, fontStyle:'italic', fontWeight: 'bold', marginBottom: 30 }}>
-                Informe a Ocorrência
+                Cadastre Sua Denúncia
             </Text>
 
             <TextInput 
@@ -31,19 +31,20 @@ const [denuncia, setDenuncia] = useState('');
 
 
             <TextInput 
-            placeholder='Informa a Descrição da sua Denúncia...'
+            placeholder='Informe o Endereço da Ocorrência...'
             placeholderTextColor={'#ced4da'} 
             value={description}
             style={styles.InputCadastro} 
             onChangeText= { value => setDescription (value) } 
             />
 
-
-            <TextInput 
-            placeholder='Conta Os Detalhes Sobre A Sua Denúncia...'
+            <Text style={{marginLeft: 30, fontSize: 15, fontWeight: 'bold'}}>Descreva Sua Denúncia</Text>
+            <TextInput
+            style={styles.InputDenuncia} 
+            multiline
+            numberOfLines={30}
             placeholderTextColor={'#ced4da'}
             value={denuncia} 
-            style={styles.InputDenuncia} 
             onChangeText= { value =>setDenuncia(value)}/>
 
 
