@@ -10,7 +10,6 @@ import Cadastro from "../Pages/Cadastro/Cadastro";
 import Reclama from "../Pages/Reclamações/Reclama";
 import Minhas_Reclamações from "../Pages/Minhas_Reclamações/Minhas_Reclamações";
 import NewRec from "../Pages/Reclamações/NewRec";
-import Details from '../Pages/Details/detailsRec'
 
 
 
@@ -60,8 +59,6 @@ export default function Routes ( ) {
         <Stack.Screen name='Cadastro' component={Cadastro} options= {{headerShown: false }} />
 
         <Stack.Screen name='NewRec' component={NewRec} options= {{headerShown: false }} />
-
-        <Stack.Screen name='Details' component={Details} options= {{headerShown: false }} />
         
         <Stack.Screen name='Reclamações' component={Tabs} options= {{headerShown: false }}/>
 
