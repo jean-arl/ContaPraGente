@@ -7,12 +7,15 @@ import Icon from 'react-native-vector-icons/Feather';
 
 import Login from "../Pages/Login/Login";
 import Cadastro from "../Pages/Cadastro/Cadastro";
-import Reclamações from "../Pages/Reclamações/Reclamações";
+import Reclama from "../Pages/Reclamações/Reclama";
 import Minhas_Reclamações from "../Pages/Minhas_Reclamações/Minhas_Reclamações";
+import NewRec from "../Pages/Reclamações/NewRec";
+import Details from '../Pages/Details/detailsRec'
 
 
 
 const Stack = createNativeStackNavigator ();
+
 const Tab = createBottomTabNavigator ();
 
 function Tabs (){
@@ -40,7 +43,7 @@ function Tabs (){
       inactiveTintColor: '#777'   
     }}>
       
-       <Tab.Screen name='Reclamações' component={Reclamações} />
+       <Tab.Screen name='Reclamações' component={Reclama} />
 
       <Tab.Screen name='Minhas Reclamações' component={Minhas_Reclamações} />    
       
@@ -55,10 +58,15 @@ export default function Routes ( ) {
         <Stack.Screen name='Login' component={Login} options= {{headerShown: false }} />
 
         <Stack.Screen name='Cadastro' component={Cadastro} options= {{headerShown: false }} />
+
+        <Stack.Screen name='NewRec' component={NewRec} options= {{headerShown: false }} />
+
+        <Stack.Screen name='Details' component={Details} options= {{headerShown: false }} />
         
         <Stack.Screen name='Reclamações' component={Tabs} options= {{headerShown: false }}/>
 
         <Stack.Screen name='Minhas Reclamações' component={Tabs} options= {{headerShown: false }}/>
+        
 
       </Stack.Navigator>
   );
